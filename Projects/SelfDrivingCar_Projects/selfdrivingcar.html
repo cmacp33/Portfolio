@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detective Robot</title>
+  <link rel="stylesheet" href="selfdrivingcar.css">
+  <script src="selfdrivingcar.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <h1>Self-Driving Detective Robot</h1>
+      <h2>Objective</h2>
+      <p>The goal of the competition was to train a robot to autonomously navigate a simulated environment in Gazebo while adhering to traffic rules. The robot was required to detect and read posted signs, submitting their IDs and values accurately to the competition score tracker. To do well in the competition the robot had to finish as quickly as possible while correctly reading all signs.</p>
+      <div class="image-wrapper" style="margin-bottom: 50px;">
+        <img src="selfdrivingcar_images/racecourse.png" width=540 alt="Sample 1">
+      </div>
+
+      <h2>Design Details</h2>
+
+      <div class="collapsible">
+          <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+            <span class="arrow">▶</span> Clue Board Reading
+          </button>
+          <div class="collapsible-content">
+            <p>To detect the clue boards, read their values, and publish them to the score tracker, the images with the clue board in the frame underwent a series of image processing before being sent through the CNN. The images were then sent through the CNN and the highest predictions were published to the /score_tracker topic.</p>
+            <h4>Clue Board Detection and Image Processing</h4>
+              <p>The robot’s camera images underwent a multi-step OpenCV pipeline before being passed to the CNN model for clue recognition. Images were first cropped using a blue HSV mask to isolate the clue board, converted to grayscale and binary, and bounded by the largest contour. A perspective transform then straightened and resized the board to 600×400 pixels, with brightness adjusted for consistency. The bottom portion containing the clue value was cropped and enhanced with filters (bilateral, Gaussian, weighted addition) to reduce noise. After binarization, contours were extracted, bounding boxes were created, and heuristics based on median width were used to merge or split boxes for individual characters. Each bounding box was resized to 32×32 pixels and compiled into an array, which was normalized and passed to the CNN. The model predictions were mapped to character labels, concatenated into a string, and published to the /score_tracker topic.</p>
+              <div class="image-wrapper"><img src="selfdrivingcar_images/clueboard.png" width="500"></div>
+              <div class="image-wrapper"><img src="selfdrivingcar_images/perspectivetransform.png" alt="motiondetection2" width="500"></div>
+              <div class="image-wrapper"><img src="selfdrivingcar_images/boundngboxes.png" width="500"></div>
+            <h4>Data Generation</h4>
+              <p>A CNN was used for character recognition, with training data generated in Google Colab. Blank 150×150 pixel images were created using PIL, and uppercase letters and numbers in the Ubuntu Mono-R font (matching the clue boards) were placed one per image. This size ensured the font matched the real clue boards while leaving margins for augmentation. Data was expanded using Keras ImageDataGenerator with limited augmentation (rotation ±15°, shear 0.1, zoom 0.3, brightness 0.5-1.5, nearest fill mode) to reflect the relatively consistent appearance of characters after pre-processing. To mimic the blur from the robot’s low-resolution camera, Gaussian blur (5×5 kernel) was also applied. The CNN was trained on the raw images, augmented sets (30 per character), and blurred versions, totaling 1,152 training images.</p>
+            <h4>CNN Architecture</h4>
+              <p>The CNN architecture was made of only a few layers to try to keep the model relatively small while still achieving high accuracy. Therefore, the final model consisted of two convolutional layers of 32 and 64 filters with ‘relu’ activation, a dropout of 0.3, a dense layer of 64 units with activation ‘relu’, and a final dense layer of 36 units (one per class) with activation ‘softmax’ for the output. A learning rate of 1e-4 was used with categorical cross entropy as the loss function. A summary of the layers is shown below.</p>
+              <div class="image-wrapper"><img src="selfdrivingcar_images/CNNarchitecture1.png" alt="CNNarchitecture1"></div>
+              <p>For training, a validation split of 0.1 was used. The number of epochs was set to 20 and early stopping was used with a patience of 3. Additionally, a batch size of 32 was used. The dataset was perfectly evenly distributed between each uppercase letter and each integer from 0 to 9.
+              Plots of the training versus validation loss and training versus validation accuracy were used to check (and adjust the network accordingly) for overfitting/underfitting, how well the model was learning, and if the number of epochs used was appropriate. The plots for the final model used are shown in the image below and confirm the model was learning well, not overfitting, and had high accuracy.</p>
+              <div class="image-wrapper"><img src="selfdrivingcar_images/CNNarchitecture2.png" alt="CNNarchitecture2"></div>
+              <p>Confidence scores were also printed to see the probability that the model would correctly predict the true label. This was only done on the training set, which helped give an initial estimate of how well the model was performing, but did not give any insight into how well the model would generalize. The confidence scores for the training set are shown below.</p>
+              <div class="image-wrapper"><img src="selfdrivingcar_images/CNNarchitecture3.png" alt="CNNarchitecture3"></div>
+          </div>
+        </div>
+
+
+        <div class="collapsible">
+          <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+            <span class="arrow">▶</span> Driving Control
+          </button>
+          <div class="collapsible-content">
+            <p>The driving controller used a camera for sensing, computer vision for image processing, and a PD controller for movement control. All computer vision techniques were first tested in google colab to quickly test and troubleshoot early issues.</p>
+            <div class="image-wrapper"><video width="640" height="360" controls><source src="selfdrivingcar_images/nav_vid.mp4" type="video/mp4"></video></div>
+            <h4>Contour Detection</h4>
+            <p>Contour detection was frequently used to trigger specific actions. A function was implemented to detect contours within a BGR range and return True if the largest contour exceeded a target area.  Additionally, the current largest contour area was printed to the terminal for determining the appropriate target area and debugging. </p>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/colorpicker.png" width="500"></div>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/contourselect.png" width="500"></div>
+            <h4>Road Following</h4>
+            <p>The road-following algorithm used a BGR threshold to isolate the road within a contour. At a specified image height, the midpoint between the left and right edges of the contour was calculated (visualized as a pink telemetry dot). A simple PD controller then adjusted the robot’s movement to follow this target point.</p>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/grass1.png" alt="roadfollow1" width="500"></div>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/grass2.png" alt="roadfollow2" width="500"></div>
+            <h4>Contour Following</h4>
+            <p>The contour-following algorithm was similar to the road-following method, but a height coordinate was incorporated to adjust the robot’s linear speed. This approach was used to follow Yoda and navigate toward the last clue board where the line disappears.</p>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/contourfollowing1.png" alt="contourfollowing1" width="500"></div>
+            <h4>Motion Detection</h4>
+            <p>Motion detection was used to safely determine when the truck and pedestrian had passed. This was done by computing the difference between consecutive images and tracking the size of the resulting change. When the difference exceeded a threshold it the designated area it indicated that the truck or pedestrian had just passed, signaling that it was safe to proceed after a small delay.</p>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/mandiff.png" alt="motiondetection2" width="500"></div>
+            <div class="image-wrapper"><img src="selfdrivingcar_images/motiondetection2.png" alt="motiondetection1" width="500"></div>
+          </div>
+        </div>
+
+  </div>
+</body>
+</html>

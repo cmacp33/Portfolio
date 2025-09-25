@@ -1,0 +1,644 @@
+/* formatting */
+body {
+    text-align: center;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+body.index {
+  background-image: url("images/background_image14.jpg");
+}
+body.content-page {
+  background-image: url("images/background_image13.jpg");
+}
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+}
+h2 {
+  color: white;
+  font-size: 1.75rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: var(--line-width, 100%);
+  border-bottom: 6px double blue;
+  margin: 5px auto 0;
+}
+h3 {
+  color: white;
+  text-align: left;
+  font-size: 1.75rem;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+h4 {
+  color: white;
+  text-align: left;
+  font-size: 1.75rem;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+h5{
+  color: white;
+  font-size: 1.0rem;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+p {
+    color: white;
+    line-height: 2;
+    font-size: 1.15rem;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.15rem;
+}
+nav a {
+  display: inline-block;
+  margin: 0 10px;
+}
+a.button {
+    color: white;
+    padding: 20px;
+}
+.image-wrapper {
+  display: block;
+  border: 5px solid white;
+  border-radius: 4px;
+  line-height: 0;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 100px auto;
+  margin-bottom: 0;
+}
+
+.image-wrapper img,
+.image-wrapper video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.textbacking {
+  list-style: none;
+  padding: 20px;
+  line-height: 2.0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin-left: 310px;
+  margin-right: 310px;
+  font-size: 1.15rem;
+}
+.textbacking li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+/* wrapper */
+.content-wrapper {
+      max-width: 75%;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.97);
+      color: white;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+.content-wrapper2 {
+      max-width: 75%;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.97);
+      color: white;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+.content-wrapper-home {
+    max-width: 50%;
+    margin: 10% auto;
+    background: rgba(0, 0, 0, 0.97);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* contact-info home */
+.contact-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* navigation bar */
+.navbar {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+  max-width: 100%; 
+  box-sizing: border-box;
+  padding: 10px 0; 
+}
+.navigation_bar {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  white-space: nowrap; 
+}
+
+.separator {
+  display: inline-block;
+  color: white;
+}
+
+.navigation_bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navigation_bar:hover::after,
+.navigation_bar.active::after {
+  transform: scaleX(1);
+}
+
+/* education - program */
+.program-section {
+  padding: 100px 20px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.program-section h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.program-section .image-wrapper {
+  float: right;
+  margin: 0 0 20px 40px;
+  max-width: 35vw;
+  border: 5px solid white;
+  border-radius: 4px;
+}
+
+.program-section .image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* education - table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 1.25rem;
+}
+.course-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px;
+  gap: 20px;
+}
+#courseDescription {
+  flex: 1;
+  min-height: 500px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: left;
+}
+#courseDescription h3 {
+  margin-top: 0;
+  color: white;
+}
+th, td {
+    border: 1px solid white;
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background-color: #007acc;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #111111;
+}
+#courseTable tr:nth-child(odd) td {
+  background-color: rgb(31, 31, 31);
+}
+#courseTable {
+  width: 55%;
+  border-collapse: collapse;
+  table-layout: auto;
+  border: 2px solid #007acc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#courseTable th, #courseTable td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: center;
+    word-wrap: break-word;
+}
+#courseTable.math th {
+    background-color: rgb(202, 2, 2);
+    color: white;
+}
+#courseTable.physics th {
+    background-color: green;
+    color: white;
+}
+#courseTable.computer th {
+    background-color: purple;
+    color: white;
+}
+#courseTable.electrical th {
+    background-color: #ffc107;
+    color: white;
+}
+#courseTable.mechanical th {
+    background-color: blue;
+    color: white;
+}
+#courseTable.project th {
+    background-color: rgb(255, 136, 0);
+    color: white;
+}
+#courseTable.other th {
+    background-color: gray;
+    color: white;
+}
+#filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  width: calc(100% - 40px);
+  margin: 25px 20px 25px 20px;
+}
+
+#filters button {
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#filters .btn-math {
+  background: rgb(202, 2, 2);
+}
+#filters .btn-math:hover {
+  background: rgba(202, 2, 2, 0.5);
+}
+#filters .btn-physics {
+  background: green;
+}
+#filters .btn-physics:hover {
+  background: rgba(0, 128, 0, 0.5);
+}
+#filters .btn-computer {
+  background: purple;
+}
+#filters .btn-computer:hover {
+  background: rgba(128, 0, 128, 0.5);
+}
+#filters .btn-electrical {
+  background: #ffc107;
+}
+#filters .btn-electrical:hover {
+  background: rgb(255, 208, 0, 0.5);;
+}
+#filters .btn-mechanical {
+  background: blue;
+}
+#filters .btn-mechanical:hover {
+  background: rgba(0, 0, 255, 0.5);
+}
+#filters .btn-project {
+  background: rgb(255, 136, 0);
+}
+#filters .btn-project:hover {
+  background: rgb(255, 136, 0, 0.5);
+}
+#filters .btn-other {
+  background: gray;
+}
+#filters .btn-other:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+/* education - skills */
+.skills-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  flex: 1 1 0;
+  min-width: 200px;
+  padding-bottom: 50px;
+}
+
+.column-header {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: calc(100% - 50px);
+  border-bottom: 4px dotted var(--line-color);
+}
+
+.icon-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 225px;
+  height: 40px;
+  padding: 10px 16px;
+  border-left: 4px solid var(--line-color, #007acc);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.75);
+  box-sizing: border-box;
+}
+
+.icon-label p {
+  margin: 0;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* projects */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1800px;
+  margin: 40px 50px;
+  justify-items: center;
+  justify-content: center;
+}
+.card {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 5px solid blue;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.card-image {
+  flex: 1;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-text {
+  flex: 0 0 auto;
+  padding: 30px;
+  background: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+.bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.bubble {
+  border: 2px solid blue;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: none;
+  color: white;
+  white-space: nowrap;
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+/* work experience*/
+.experience {
+  text-align: left;
+  margin-bottom: 60px;
+  padding: 30px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  color: white;
+  border: 2px solid var(--line-color, blue);
+}
+.experience h1 {
+  font-size: 1.75rem;
+  margin-bottom: 2px;
+}
+.experience .date {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+.skills {
+  margin-bottom: 15px;
+}
+.boxed {
+  border: 2px solid blue;
+  border-radius: 8px;
+  padding: 5px 12px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.4);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.tasks {
+  margin: 0;
+  padding-left: 10px;
+  list-style: none;
+}
+.tasks li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 35px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+.tasks li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  color: blue;
+  font-weight: bold;
+}
+
+/* extracurriculars - slideshow */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  padding: 20px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.mySlide {
+  display: none;
+}
+
+.mySlide img {
+  height: auto;
+  max-height: 640px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.fade {
+  animation: fadeEffect 1s;
+}
+@keyframes fadeEffect {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  padding: 10px;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.7);
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.achievements-list {
+  list-style: none;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin-left: 310px;
+  margin-right: 310px;
+}
+
+.achievements-list li {
+  display: flex;              /* use flexbox for alignment */
+  align-items: center;        /* vertically center icon + text */
+  gap: 10px;                  /* space between icon and text */
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.5;           /* normal text spacing */
+}
+
+.achievements-list iconify-icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;             /* prevent icon from shrinking */
+  display: flex;              /* make sure icon itself is flex */
+  align-items: center;        /* center SVG inside the tag */
+}
+
+
+
+
+
+
+
+
+
+
+
+

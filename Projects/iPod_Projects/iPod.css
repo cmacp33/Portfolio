@@ -1,0 +1,106 @@
+body {
+    text-align: center;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../images/background_image13.jpg");
+    min-height: 100%;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 30px;
+  position: relative;
+}
+h1::after {
+  content: "";
+  display: block;
+  width: 35%;                 /* underline length */
+  border-bottom: 4px solid blue;
+  margin: 5px auto 0 auto;    /* centers it */
+}
+h2 {
+  color: white;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 100%;            /* 50% of text width */
+  border-bottom: 4px dotted blue;
+  margin-top: 5px;
+}
+
+h3 {
+    color: white;
+    text-align: left;
+    font-size: 1.15rem;
+}
+h4 {
+    color: white;
+    text-align: left;
+    font-style: italic;
+}
+h5{
+  color: white;
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+p {
+    color: white;
+    line-height: 2;
+    text-align: left;
+    padding-bottom: 25px;
+    font-size: 1.25rem;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+nav a {
+  display: block;
+  margin: 0 10px;
+}
+a.button {
+    color: white;
+    padding: 20px;
+}
+section {
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 70px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+.image-wrapper {
+  display: block;
+  border: 5px solid white;
+  border-radius: 4px;
+  line-height: 0;
+  width: fit-content;
+  margin: 0 auto;
+}
+.image-wrapper video {
+  display: block;
+}

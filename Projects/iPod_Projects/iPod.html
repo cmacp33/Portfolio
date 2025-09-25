@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - iPod</title>
+  <link rel="stylesheet" href="iPod.css">
+  <script src="iPod.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <h1>FPGA iPod</h1>
+      <h2>Objective</h2>
+      <p>In this project I programmed an Altera DE1-SoC FPGA to function as a simple digital audio player. Songs that were stored as a sequence of 16-bit audio samples were first uploaded from a computer to the FPGA’s flash memory. A finite state machine (FSM) was then implemented to reliably read the audio data from flash and stream it to the audio output interface. A PS/2 keyboard was connected to the FPGA, enabling controls such as play, pause, restart, skip, speed up, and slow down. Additionally, a PicoBlaze soft-core processor was programmed to drive the onboard LEDs as a real-time volume intensity bar, displaying the relative loudness of the audio signal.</p>
+      <div class="image-wrapper"><img src="iPod_images/setup.JPG" width="600"></div>
+  </div>
+</body>
+</html>
