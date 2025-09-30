@@ -49,7 +49,7 @@ function autoSlides() {
   slideTimer = setInterval(() => {
     slideIndex++;
     showSlides(slideIndex);
-  }, 4000); // 4 seconds
+  }, 2500); // 4 seconds
 }
 
 window.addEventListener("load", function() {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "MATH255": "Review of linear systems; nonlinear equations and applications; phase plane analysis; Laplace transforms; numerical methods.",
     "MATH257": "Introduction to partial differential equations; Fourier series; the heat, wave and potential equations; boundary-value problems; numerical methods.",
     "MATH305": "Functions of a complex variable, Cauchy-Riemann equations, contour integration, Laurent series, residues, integrals of multi-valued functions, Fourier transforms.",
-    "MATH307": "Applications of linear algebra to problems in science and engineering; use of computer algebra systems for solving problems in linear algebra.",
+    "MATH307": "Linear systems of equations, LU decomposition, condition number, orthogonal projection, QR decomposition, least squares approximation, orthogonal diagonalization, singular value decomposition, discrete Fourier transform. Applications: interpolation, differential equations, data fitting, principal component analysis, image deblurring, PageRank, digital signal processing. Matrix computations with mathematical software Python, SciPy and Jupyter.",
     "MATH318": "Random variables, discrete and continuous distributions. Random walk, Markov chains, Monte Carlo methods. Characteristic functions, limit laws.",
     "MATH400": "Separation of variables, first order equations, Sturm-Liouville theory, integral transform methods.",
     "PHYS117": "Kinematics including curvilinear motion. Forces and Newton's laws of motion. Work-energy theorem, conservation of energy. Conservation of momentum, collisions. Torque, rotational dynamics, angular momentum. Oscillations and waves.",

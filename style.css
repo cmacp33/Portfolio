@@ -36,6 +36,7 @@ h2::after {
   border-bottom: 6px double blue;
   margin: 5px auto 0;
 }
+
 h3 {
   color: white;
   text-align: left;
@@ -46,19 +47,17 @@ h3 {
 }
 h4 {
   color: white;
-  text-align: left;
   font-size: 1.75rem;
   position: relative;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  padding-bottom: 10px;
+  display: inline-block; /* shrink-wrap to text width */
 }
-h5{
-  color: white;
-  font-size: 1.0rem;
-  text-align: center;
-  margin-bottom: 50px;
-  font-weight: normal;
-  margin-top: 10px;
+h4::after {
+  content: "";
+  display: block;
+  border-bottom: 6px double blue;
+  width: 100%;              /* matches h2’s inline width */
+  margin-top: 5px;
 }
 p {
     color: white;
@@ -101,6 +100,32 @@ a.button {
   height: auto;
 }
 
+.image-wrapper2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid white;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+  box-sizing: border-box;
+}
+
+.image-wrapper2 img {
+  width: 50%;                 /* each image takes half container */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-right: 5px solid white;  /* divider between */
+}
+
+.image-wrapper2 img:last-child {
+  border-right: none;          /* remove divider on last */
+}
+
+
 .textbacking {
   list-style: none;
   padding: 20px;
@@ -126,7 +151,7 @@ a.button {
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.97);
       color: white;
-      padding: 40px;
+      padding: 3%;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
 .content-wrapper2 {
@@ -134,7 +159,7 @@ a.button {
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.97);
       color: white;
-      padding: 40px;
+      padding: 3%;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
 .content-wrapper-home {
@@ -142,7 +167,7 @@ a.button {
     margin: 10% auto;
     background: rgba(0, 0, 0, 0.97);
     color: white;
-    padding: 40px;
+    padding: 3%;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -177,6 +202,7 @@ a.button {
 .separator {
   display: inline-block;
   color: white;
+  font-weight: bolder;
 }
 
 .navigation_bar::after {
@@ -199,7 +225,7 @@ a.button {
 
 /* education - program */
 .program-section {
-  padding: 100px 20px;
+  padding: 50px 20px 50px 20px;
   overflow: hidden;
   text-align: left;
 }
@@ -291,11 +317,11 @@ tr:nth-child(even) {
     color: white;
 }
 #courseTable.computer th {
-    background-color: purple;
+    background-color: rgb(128, 0, 175);
     color: white;
 }
 #courseTable.electrical th {
-    background-color: #ffc107;
+    background-color: #ffb007;
     color: white;
 }
 #courseTable.mechanical th {
@@ -303,7 +329,7 @@ tr:nth-child(even) {
     color: white;
 }
 #courseTable.project th {
-    background-color: rgb(255, 136, 0);
+    background-color: rgb(255, 106, 0);
     color: white;
 }
 #courseTable.other th {
@@ -321,7 +347,7 @@ tr:nth-child(even) {
 #filters button {
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 0px;
   font-size: 1.15rem;
   font-weight: bold;
   border-radius: 30px;
@@ -342,16 +368,16 @@ tr:nth-child(even) {
   background: rgba(0, 128, 0, 0.5);
 }
 #filters .btn-computer {
-  background: purple;
+  background: rgb(128, 0, 175);
 }
 #filters .btn-computer:hover {
-  background: rgba(128, 0, 128, 0.5);
+  background: rgba(128, 0, 175, 0.5);
 }
 #filters .btn-electrical {
-  background: #ffc107;
+  background: #ffb007;
 }
 #filters .btn-electrical:hover {
-  background: rgb(255, 208, 0, 0.5);;
+  background: #ffb00780;
 }
 #filters .btn-mechanical {
   background: blue;
@@ -360,10 +386,10 @@ tr:nth-child(even) {
   background: rgba(0, 0, 255, 0.5);
 }
 #filters .btn-project {
-  background: rgb(255, 136, 0);
+  background: rgb(255, 106, 0);
 }
 #filters .btn-project:hover {
-  background: rgb(255, 136, 0, 0.5);
+  background: rgb(255, 106, 0, 0.5);
 }
 #filters .btn-other {
   background: gray;
@@ -562,16 +588,22 @@ tr:nth-child(even) {
   padding: 20px;
   box-sizing: border-box;
   display: inline-block;
+
+  width: 50%;
+  background: black; /* black fill for letterboxing */
 }
 
 .mySlide {
   display: none;
+  width: 100%;
+  height: 100%;
 }
 
-.mySlide img {
-  height: auto;
-  max-height: 640px;
-  width: auto;
+.mySlide img,
+.mySlide video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* keep aspect ratio, no cropping */
   display: block;
   margin: 0 auto;
 }
@@ -587,8 +619,8 @@ tr:nth-child(even) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
-  padding: 10px;
+  font-size: 3rem;
+  padding: 5px;
   color: white;
   background: rgba(0,0,0,0.4);
   cursor: pointer;
@@ -606,30 +638,35 @@ tr:nth-child(even) {
 }
 .achievements-list {
   list-style: none;
-  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 12px;
-  margin-left: 310px;
-  margin-right: 310px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .achievements-list li {
-  display: flex;              /* use flexbox for alignment */
-  align-items: center;        /* vertically center icon + text */
-  gap: 10px;                  /* space between icon and text */
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 12px;
   font-size: 1.1rem;
-  line-height: 1.5;           /* normal text spacing */
+  line-height: 1.5;
+
+  flex-wrap: wrap;    /* allow wrapping */
 }
 
-.achievements-list iconify-icon {
-  width: 25px;
-  height: 25px;
-  flex-shrink: 0;             /* prevent icon from shrinking */
-  display: flex;              /* make sure icon itself is flex */
-  align-items: center;        /* center SVG inside the tag */
+.achievements-list li span {
+  flex: 1;            /* let text take the rest of the space */
 }
+
+.achievements-list li iconify-icon {
+  display: inline-flex;       /* ensure icon is a flex container */
+  align-items: center;        /* vertically center SVG inside */
+  justify-content: center;
+  flex-shrink: 0;             /* prevent icon from shrinking */
+}
+
 
 
 

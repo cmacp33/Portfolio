@@ -112,6 +112,26 @@ section {
 .image-wrapper video {
   display: block;
 }
+.image-wrapper2 {
+  display: flex;
+  border: 5px solid white;
+  border-radius: 4px;
+  overflow: hidden;           /* ensures borders don’t overlap */
+  width: fit-content;
+  margin: 0 auto 50px auto;
+}
+
+.image-wrapper2 img {
+  display: block;
+  max-width: 400px;           /* keeps them reasonable */
+  height: auto;
+  flex: 1;                    /* make them share available width */
+  border-right: 5px solid white; /* divider between */
+}
+
+.image-wrapper2 img:last-child {
+  border-right: none;         /* remove divider on the last image */
+}
 .collapsible-content.show {
   max-height: 6000px;
   padding: 10px;
