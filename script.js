@@ -1,3 +1,4 @@
+/* course table scripting*/
 function filterCourses(category) {
 
     let rows = document.querySelectorAll('#courseTable tr');
@@ -13,103 +14,59 @@ function filterCourses(category) {
 
 };
 
-function toggleCollapsible(button) {
-  button.classList.toggle("active");
-  const content = button.nextElementSibling;
-  content.classList.toggle("show");
-}
-
-let slideIndex = 0;
-let slideTimer;
-
-function showSlides(n) {
-  const slides = document.getElementsByClassName("mySlide");
-  if (n >= slides.length) slideIndex = 0;
-  if (n < 0) slideIndex = slides.length - 1;
-
-  // hide all
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  // show current
-  slides[slideIndex].style.display = "block";
-}
-
-// manual navigation
-function plusSlides(n) {
-  clearInterval(slideTimer); // stop auto when clicked
-  slideIndex += n;
-  showSlides(slideIndex);
-  autoSlides(); // restart auto
-}
-
-// auto slide
-function autoSlides() {
-  slideTimer = setInterval(() => {
-    slideIndex++;
-    showSlides(slideIndex);
-  }, 2500); // 4 seconds
-}
-
 window.addEventListener("load", function() {
   filterCourses('math');
 });
 
-window.addEventListener("load", function() {
-  showSlides(slideIndex);
-  autoSlides();
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   const courseDescriptions = {
-    "MATH100": "Derivatives of elementary functions. Applications and modelling: graphing, optimization.",
-    "MATH101": "The definite integral, integration techniques, applications, modelling, infinite series.",
-    "MATH152": "2D and 3D geometry, vectors and matrices, eigenvalues and vibration, physical applications. Laboratories demonstrate computer solutions of large systems.",
-    "MATH217": "Partial differentiation, extreme values, multiple integration, vector fields, line and surface integrals, the divergence theorem, Green's and Stokes' theorems. Intended for students in Honours Physics and Engineering Physics.",
-    "MATH255": "Review of linear systems; nonlinear equations and applications; phase plane analysis; Laplace transforms; numerical methods.",
-    "MATH257": "Introduction to partial differential equations; Fourier series; the heat, wave and potential equations; boundary-value problems; numerical methods.",
-    "MATH305": "Functions of a complex variable, Cauchy-Riemann equations, contour integration, Laurent series, residues, integrals of multi-valued functions, Fourier transforms.",
+    "MATH100": "Functions, limits, continuity, and derivatives, including trigonometric, logarithmic, and inverse functions. Applications: tangent lines, linear and higher-degree approximations, related rates, curve sketching, and optimization.",
+    "MATH101": "Definite and indefinite integrals, Riemann sums, Trapezoidal and Simpson’s Rules. Fundamental Theorem of Calculus, substitution, partial fractions, and integration by parts. Numerical integration, ODEs, probability, expected value, variance, sequences, series, power and Taylor series, and error estimation.",
+    "MATH152": "Vectors, matrices, and linear algebra: coordinate representation, dot and cross products, determinants, lines and planes, linear systems, echelon forms, rank, and homogeneous equations. Matrix operations, linear transformations, rotations, projections, reflections, inverses, eigenvalues, eigenvectors, and powers of matrices.",
+    "MATH217": "Vectors, dot and cross products, lines, planes, curves, and surfaces. Multivariable functions, derivatives, gradients, extrema, and Lagrange multipliers. Double and triple integrals in various coordinates, vector fields, line and surface integrals. Gradient, divergence, curl, classical theorems, and differential forms with the generalized Stokes’ theorem.",
+    "MATH255": "First- and second-order differential equations, including separable, linear, autonomous, exact, and non-homogeneous equations, mechanical vibrations, forced oscillations, and resonance. Numerical methods, Laplace transforms, systems of ODEs with eigenvalue techniques, and nonlinear planar systems, including critical points, stability, and classification.",
+    "MATH257": "Review of techniques for solving ordinary differential equations. Series solutions of variable coefficient ODEs at ordinary and regular singular points. Introduction to partial differential equations, including the heat, wave, and Laplace equations. Numerical methods for PDEs using finite differences and stability analysis. Fourier series and separation of variables applied to the heat, wave, and Laplace equations. Boundary value problems and Sturm-Liouville theory, including eigenfunctions, eigenvalues, and nonhomogeneous problems.",
+    "MATH305": "Fundamentals of complex numbers, including complex exponentials, roots of unity, powers and roots, and elementary mappings. Functions of a complex variable, analytic functions, Cauchy-Riemann equations, harmonic functions, and selected special functions. Multivalued and inverse functions, branch cuts, and the complex logarithm. Contour integration, Cauchy’s integral theorem, and path independence. Laurent series, singularities, poles, and residue calculus. Fourier and Laplace transform integrals, integrals of multivalued functions, and applications.",
     "MATH307": "Linear systems of equations, LU decomposition, condition number, orthogonal projection, QR decomposition, least squares approximation, orthogonal diagonalization, singular value decomposition, discrete Fourier transform. Applications: interpolation, differential equations, data fitting, principal component analysis, image deblurring, PageRank, digital signal processing. Matrix computations with mathematical software Python, SciPy and Jupyter.",
-    "MATH318": "Random variables, discrete and continuous distributions. Random walk, Markov chains, Monte Carlo methods. Characteristic functions, limit laws.",
-    "MATH400": "Separation of variables, first order equations, Sturm-Liouville theory, integral transform methods.",
+    "MATH318": "Probability spaces, independence, conditional probability. Discrete and continuous random variables, expectation, variance, moments. Generating and characteristic functions, convergence of random variables. Law of large numbers, central limit theorem, confidence intervals, hypothesis testing. Discrete Markov chains, random walks, Poisson processes. Applications in stochastic modeling, statistical inference, and data analysis.",
+    "MATH400": "Sturm-Liouville theory, separation of variables, and eigenfunction expansions. Diffusion (heat) and wave equations, analyzed using eigenfunction expansions, Laplace and Fourier transforms, D’Alembert’s formula, and relevant special functions. Laplace’s equation, steady-state temperature distributions, Poisson’s formula, and spherical harmonics. Classification of linear second-order PDEs, and the method of characteristics for first-order equations. Introduction to advanced topics such as dispersion relations, edge singularities, and nonlinear PDEs.",
     "PHYS117": "Kinematics including curvilinear motion. Forces and Newton's laws of motion. Work-energy theorem, conservation of energy. Conservation of momentum, collisions. Torque, rotational dynamics, angular momentum. Oscillations and waves.",
     "PHYS118": "Optics, electricity and magnetism, electric circuits, electromagnetic waves.",
     "PHYS119": "Introductory laboratory course, with emphasis on data collection, data analysis techniques, and scientific reasoning. ",
-    "PHYS250": "Wave-particle duality of matter, special relativity, processes in atomic, nuclear and solid state, and introduction to quantum mechanical devices and techniques.",
-    "PHYS301": "Maxwell's equations and their applications, electrical fields and potentials of static charge distributions, current, fields of moving charges, magnetic fields, electromagnetic induction.",
-    "PHYS304": "Principles and applications of quantum mechanics, wave mechanics, the Schroedinger equation, expectation values, Hermitian operators, commuting observables, one-dimensional systems, harmonic oscillators, angular momentum, three-dimensional systems.",
-    "PHYS350": "Review of principles. Particle mechanics: Euler's equations, tops and gyroscopes, motion of the Earth, Lagrangian and Hamiltonian methods. Variational principles in optics and mechanics, Liouville's theorem and statistical mechanics. The relationship between classical and quantum mechanics.",
-    "PHYS401": "Applications of Maxwell's theory. Wave propagation in dielectrics, conductors and plasmas, wave guides, radiation, antennae, and special relativity.",
-    "PHYS403": "Principles and applications of statistical mechanics. Ideal gases, degenerate Fermi gases, Bose-Einstein condensation, black body radiation, fluctuations and phase transitions.",
+    "PHYS250": "Wave-particle duality and the quantum behavior of matter, including photons, electrons as waves, and probability waves. Schrödinger equation and potential energy wells, atomic structure, and the properties of solids and conductivity. Special relativity, emission and absorption of light, and Bose-Einstein condensation. Introduction to quantum mechanical devices and modeling of physical systems.",
+    "PHYS301": "Vector algebra and calculus review. Electrostatics, electric fields and potentials, Poisson and Laplace equations, multipole moments, energy, capacitance, and dielectrics. Boundary value problems, magnetostatics, magnetic fields and vector potentials, magnetic materials, forces, energy, and inductance. Faraday induction, Maxwell’s equations, and electromagnetic waves.",
+    "PHYS304": "The wave function and Schrödinger equation, including stationary states and one-dimensional examples such as the infinite square well, harmonic oscillator, free particle, delta function potential, and finite square well. Three-dimensional harmonic oscillator and the hydrogen atom. Hilbert space formalism, including states, operators, observables, measurements, and the Copenhagen interpretation. Introduction to quantum information concepts, including qubits, entanglement, superdense coding, and quantum teleportation.",
+    "PHYS350": "Classical mechanics using Lagrangian and Hamiltonian formalisms, covering Euler-Lagrange equations, variational derivatives, conserved momenta and energy, Hamiltonians, Poisson brackets, and phase space flows. Applications include 1D motion, central potentials, two-body problems, orbital parameters, and Kepler’s laws. Rigid body dynamics covers rotations, angular momentum, torque, principal axes, Euler’s equations, Euler angles, precession, and gyroscope motion. Vibrations and oscillations include 1D harmonic oscillators, multidimensional static solutions, quadratic expansions, normal modes, and frequencies.",
+    "PHYS401": "Review of electrostatics and magnetostatics. Electromagnetic induction, Maxwell’s equations, and electromagnetic waves. Absorption, dispersion, and wave propagation in waveguides. Radiation of electromagnetic waves, potentials, fields, gauge transformations, and the connection between electrodynamics and relativity.",
+    "PHYS403": "Review of macroscopic physics and thermodynamics. Introduction to statistical physics, including entropy, the second law, temperature, and the canonical ensemble. Continuous energy levels, chemical potential, and the grand canonical ensemble. Perfect gases, photon gas and blackbody radiation, ideal Bose and Fermi gases, Bose-Einstein condensation, and phase transitions.",
     "PHYS408": "Principles and applications of optical physics. Interference, diffraction, coherence, polarization, Fresnel relations, optical coatings, waves in dielectric media, Gaussian beams, waveguides, optical cavities, lasers, fibre optics, and Fourier optics.",
-    "PHYS410": "Scientific programming applied to problems in physics. Fundamentals of numerical analysis for continuum problems. Solution of linear and non-linear algebraic systems, ordinary differential equations and stochastic problems.",
+    "PHYS410": "Polynomial interpolation, nonlinear equation solving, finite difference approximations, ordinary and partial differential equations, Monte Carlo methods, and fast Fourier transforms. Applications to classical dynamics, quantum mechanics, and statistical mechanics.",
     "CPEN212": "Abstractions at the hardware-software interface and their low-level implementation. Procedure invocation, dynamic dispatch, and related exploits; library linkage, virtual memory, heap management, garbage collection, and caches; interrupts, signals, and processes; threads, locks, and cache coherence; files, devices, and network topology.",
-    "CPEN221": "Design, implementation, reasoning about software systems: abstraction and specification of software, testing, verification, abstract data types, object-oriented design, type hierarchies, concurrent software design.",
-    "CPEN311": "Advanced combinational and sequential electronic system design. Hardware specification, modelling, and simulation using hardware description languages (HDLs) and CAD tools. Design with programmable logic including FPGA's. Applications include complex state machines, microcontrollers, arithmetic circuits, and interface units.",
-    "CPEN312": "Data representation in digital computers; boolean algebra; the design and optimization and implementation of combinatorial and sequential circuits; modern digital circuit technologies; memory and programmable logic devices; organization and operation of microcomputers; data/address bus organization; input-output interfacing. ",
+    "CPEN221": "Design, implementation, and reasoning about software systems, including abstraction, specification, testing, and verification. Object-oriented design with abstract data types, classes, interfaces, inheritance. Software concepts such as mutability, recursion, equality, lambdas, streams, grammars, exceptions, and error handling. Parallelism with threads and mutexes, data structures including sets, arrays, trees, and maps.",
+    "CPEN311": "Digital design with FPGAs using SystemVerilog and VHDL, covering combinational and sequential logic, finite state machines, pipelining, and microprocessor design. Reliable and modular FPGA design, synchronization, clock domain crossing, and high-speed digital signal processing. Hands-on labs with Altera Quartus, SignalTap, and Nios/Qsys for simulation, debugging, and hardware validation.",
+    "CPEN312": "Fundamentals of digital systems, including number representation, binary logic, gate implementations, Boolean algebra, and reduction techniques. Introduction to VHDL and design of arithmetic circuits, code converters, multiplexers, ALUs, flip-flops, registers, and synchronous counters. Finite state machines, assembly programming, integer arithmetic, memory, I/O ports, timers and counters, interrupts, and serial port communication.",
     "CPEN331": "Operating systems, their design and their implementation. Process concurrency, synchronization, communication and scheduling. Device drivers, memory management, virtual memory, file systems, networking and security.",
-    "CPEN455": "Fundamentals of deep learning, including architectures (e.g., MLPs, CNNs, RNNs, Transformers, and GNNs) and learning algorithms under different paradigms (supervised / unsupervised / reinforcement learning). Emphasis on design principles and motivating applications.",
-    "CPSC538": "Multi-tasking; interrupt-driven systems; task scheduling; schedulability analysis; inter-process communication and synchronization; resource management; performance measurement; hardware/software integration; hardware/software tradeoffs; system reliability.",
-    "ELEC204": "Basic concepts and analysis techniques in the context of electric and electronic circuits including Bode plots and the Laplace transform. Treatment of RLC circuits, phasors, op-amps. Introduction to nonlinear circuit elements, diodes, BJT, FET circuits.",
-    "ELEC221": "Complex numbers, LTI systems, convolution sum, discrete-time Fourier series and transforms, z-transform, sampling, introduction to filtering and modulation, feedback systems, stability.",
+    "CPEN455": "Foundations and advanced topics in deep learning, covering linear models for regression and classification, multilayer perceptrons, backpropagation, optimization methods, and regularization techniques. Convolutional, recurrent, and graph neural networks, transformers, and large language models. Generative models including autoencoders, variational autoencoders, and denoising diffusion models. Deep reinforcement learning with MDPs, Bellman equations, Q-learning, policy gradients, actor-critic methods, and Dyna-Q.",
+    "CPSC538": "Theoretical and practical aspects of real-time and embedded systems, including task scheduling, schedulability analysis, resource sharing protocols, real-time operating system principles, fault tolerance, and software-intensive safety-critical systems. Hands-on experience with embedded programming, bare-metal and kernel-level code on the Raspberry Pi platform.",
+    "ELEC204": "Review of circuit elements and parameters; nodal and mesh analysis; Thevenin, Norton, superposition, and maximum power transfer theorems. First- and second-order circuits (RL, RC, RLC), operational amplifiers, sinusoidal steady-state analysis, phasors, and power calculations. Laplace transforms in circuit analysis. Frequency-selective circuits, active filters, Fourier series and transforms, Bode plots. Introduction to diodes and transistors (BJTs and MOSFETs).",
+    "ELEC221": "Introduction to signals and systems, including linear time-invariant (LTI) systems, impulse responses, and convolution (discrete and continuous time). Fourier series and transforms (CT and DT), frequency response, filters, magnitude-phase representation, Bode plots, and fast Fourier transform. Analysis of first- and second-order continuous- and discrete-time systems. Sampling theorem, up/downsampling, amplitude modulation, communication systems, Laplace transforms, stability analysis, z-transform, and feedback systems.",
     "ELEC302": "Semiconductor fundamentals; modelling of electronic devices including diodes and transistors; design of power supplies, waveform generators and logic circuits; signals in time and frequency domains; operational amplifiers; active filters; oscillators; device specification and selection.",
-    "ELEC341": "Continuous time system analysis by Laplace transforms; system modelling by transfer function and state space methods; feedback, stability and sensitivity; control design; frequency domain analysis.",
+    "ELEC341": "Review of signals and systems, including LTI system properties, block diagrams, and methods of signal decomposition (Fourier and Laplace transforms). Physical network modeling with uniports and diports, and signal flow graphs. State-space modeling, canonical forms, transfer function mapping, controllability, observability, feedback design, and steady-state performance. Stability analysis using the Routh-Hurwitz criterion, root locus methods, and controller design (PI, PD, PID) through simulation to hardware implementation.",
     "ELEC481": "Time-money relationships; economic analysis of alternatives including the effects of interest rates, inflation, depreciation, taxation and uncertainty; cost estimation and budgeting; financial analysis of engineering operations.",
     "MECH260": "Statically determinate frames and trusses; normal and shear stresses and strains; shear force and bending moment diagrams; theory of beam bending, torsion of circular rods; transformation of stress and strain in two and three dimensions, Mohr's circle; yield and ultimate failure criteria.",
     "MECH280": "Fluid properties; statics; kinematics, dynamics, energy, and momentum principles for control volumes; dimensional analysis and similarity; laminar and turbulent flow; pipe flow; principles of centrifugal pumps.",
     "MECH325": "Selection of flexible drives, bearings, fluid power system components, and couplings. Design of shafts, bolted joints and power screws. Design and selection of gears, gear trains, and mechanisms.",
-    "ENPH253": "Practice in engineering design and instrument development including mechanical and electrical design, and communications with sensors, actuators. Micro-controller implementation and system integration. Engineering design review process and presentations. Engineering communication in design and product release.",
+    "ENPH253": "Practical electronics and embedded systems. Digital inputs (collision sensors, interrupts, switch debouncing, Schmitt triggers, reflectance sensors), analog inputs and circuits (IR detection, phototransistors, BJTs, Zener diodes, op-amps, and filtering), motors and motor control (analog output, D/A conversion, PWM, transistor and MOSFET drivers, H-bridge circuits, and inductive load considerations), control systems, and noise and shielding (ground loops, single-point grounding, optical isolation, twisted-pair wiring, and switched currents).",
     "ENPH257": "Thermometry, thermal properties of matter; heat transfer by conduction; convection and radiation; kinetic theory of gases and gas laws; heat engines; refrigeration; change of state; first and second laws of thermodynamics.",
-    "ENPH259": "Basic experimental techniques in acquisition, analysis, and presentation and communication of data and technical results.",
+    "ENPH259": "Fundamentals of experimental techniques, covering data acquisition, analysis, and communication. Emphasis on proper lab notebook keeping, minimizing measurement errors, designing experiments, and clear technical communication. Hands-on labs focus on constructing and debugging circuits using basic analog electronics (op-amps, transient AC analysis, transistors, ADCs) and basic digital electronics (truth tables, logic gates, latches, shift registers, counters).",
     "ENPH270": "Dynamics: systems of particles, kinematics and kinetics of rigid bodies (plane motion), energy and momentum, rotating coordinates.",
-    "ENPH352": "Some of the experiments will be based on the lecture material for PHYS 301. Other techniques and subjects will also be covered.",
-    "ENPH353": "Engineering project planning, execution and reporting. The course involves carrying out an open-ended Engineering project to meet specific performance metrics on an industry relevant topic selected by instructors. Reporting on progress is both oral and written.",
-    "ENPH459": "Project planning, management and reporting. This course involves writing a project proposal, carrying out an open-ended Engineering project, and reporting the results both orally and in writing.",
-    "ENPH479": "Projects designed to give students research development and design experience. Projects are provided by research faculty in Science and Engineering and from local industry.",
+    "ENPH352": "Experiments based on the lecture material from PHYS 301, PHYS 304, PHYS 401, and PHYS 408.",
+    "ENPH353": "Linux and networking fundamentals, cloud computing, Python programming, and OpenCV. ROS architecture, Gazebo simulation, communication via topics and messages, and robot control. Supervised learning, deep learning, gradient descent, backpropagation, convolutional layers, pooling, regularization, and normalization. Q-learning and cross-entropy strategies for simulated robot control. Laboratory work and projects involve robot line following, GUI tracking, character recognition, neural network implementation, and robotics competitions.",
+    "ENPH459": "Capstone Project Year 1.",
+    "ENPH479": "Capstone Project Year 2.",
     "APSC100": "An introduction to the engineering profession including: roles and responsibilities of the engineer, the engineering disciplines, sustainability, an introduction to the engineering design process, introduction and application of the relevant foundational scientific principles, prototyping, engineering graphics, technical communication, and engineering ethics.",
     "APSC101": "An introduction to the engineering profession including: the engineering design process, sustainability, prototype testing, introduction and application of the relevant foundational scientific principles, team functioning, engineering graphics, and technical communication.",
-    "APSC160": "Analysis and simulation, laboratory data acquisition and processing, measurement interfaces, engineering tools, computer systems organization, programming languages.",
+    "APSC160": "Introduction to computer systems, compilers, and programming fundamentals. Variables, data types, expressions, I/O, libraries, function calls, flow control, looping, debugging, and modular programming. Programming with multi-dimensional arrays. Simple I/O operations and analog data acquisition.",
     "APSC278": "Atomic bonding; crystal structures and imperfections; properties of metals, ceramics, polymers, wood, concrete and fibre composite materials; selection of materials; corrosion; mechanical testing and heat treatment.",
     "APSC279": "Atomic bonding; crystal structures and imperfections; properties of metals, ceramics, polymers, wood, concrete and fibre composite materials; selection of materials; corrosion; mechanical testing and heat treatment.",
     "APSC450": "Legislation affecting the practice of engineering; ethical principles and responsibilities. Management of engineering enterprises; labour relations, safety and environmental legislation.",
@@ -124,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   table.addEventListener("click", function (e) {
     const row = e.target.closest("tr");
-    if (!row || row.querySelector("th")) return; // ignore header
+    if (!row || row.querySelector("th")) return;
 
     const code = row.cells[0].textContent.trim();
     const name = row.cells[1].textContent.trim();
