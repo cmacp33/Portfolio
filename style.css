@@ -549,7 +549,7 @@ tr:nth-child(even) {
   margin-bottom: 15px;
 }
 .boxed {
-  border: 2px solid blue;
+  border: 2px solid var(--line-color, blue);
   border-radius: 8px;
   padding: 5px 12px;
   margin-right: 10px;
@@ -575,7 +575,7 @@ tr:nth-child(even) {
   content: "➤";
   position: absolute;
   left: 0;
-  color: blue;
+  color: var(--line-color, blue);
   font-weight: bold;
 }
 
@@ -590,7 +590,7 @@ tr:nth-child(even) {
   display: inline-block;
 
   width: 50%;
-  background: black; /* black fill for letterboxing */
+  background: black;
 }
 
 .mySlide {
@@ -603,7 +603,7 @@ tr:nth-child(even) {
 .mySlide video {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;  /* keep aspect ratio, no cropping */
+  object-fit: contain;
   display: block;
   margin: 0 auto;
 }
@@ -653,18 +653,18 @@ tr:nth-child(even) {
   font-size: 1.1rem;
   line-height: 1.5;
 
-  flex-wrap: wrap;    /* allow wrapping */
+  flex-wrap: wrap;
 }
 
 .achievements-list li span {
-  flex: 1;            /* let text take the rest of the space */
+  flex: 1;
 }
 
 .achievements-list li iconify-icon {
-  display: inline-flex;       /* ensure icon is a flex container */
-  align-items: center;        /* vertically center SVG inside */
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  flex-shrink: 0;             /* prevent icon from shrinking */
+  flex-shrink: 0;
 }
 
 

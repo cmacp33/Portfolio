@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeRTOS Extension</title>
+  <link rel="stylesheet" href="freertos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <h1>FreeRTOS Kernel Extension</h1>
+      <h2>Objective</h2>
+       <p style="font-size: 1.15rem; padding-bottom: 0px;">The objective of this project was to extended the FreeRTOS kernel to support dynamic-task priority scheduling and resource access control. Specifically it had to support the following:</p>
+      <ul class="tasks">
+        <li>Earliest Deadline First (EDF) scheduler on a single core, partitioned (fixed) multi-core, and global (variable) multi-core.</li>
+        <li>Stack Resource Policy (SRP) on a single core for binary semaphores only.</li>
+        <li>Constant Bandwidth Server (CBS) on a single core for servicing soft real-time requests on top of the hard real-time tasks scheduled by EDF.</li>
+      </ul>
+      <p style="font-size: 1.25rem; text-align: center; font-weight: bold; padding-bottom: 0; padding-top: 50px">Repo Link: <a href="https://github.com/cmacp33/FreeRTOS-Kernel-Extension" style="color:blue; font-size: 1.25rem;">https://github.com/cmacp33/FreeRTOS-Kernel-Extension</a></p>
+  </div>
+</body>
+</html>
