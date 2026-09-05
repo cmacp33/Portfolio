@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Courses</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
+
+<body class="content-page">
+<div class="content-wrapper">
+  <h1>Courses</h1>
+  <nav class="navbar">
+    <a href="index.html" class="navigation_bar">Home</a>
+    <span class="separator">|</span>
+    <a href="courses.html" class="navigation_bar active">Courses</a>
+    <span class="separator">|</span>
+    <a href="projects.html" class="navigation_bar">Projects</a>
+    <span class="separator">|</span>
+    <a href="extracurriculars.html" class="navigation_bar">Extracurriculars</a>
+  </nav>
+
+  <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:rgb(128, 0, 175);">Computer Engineering</h2>
+
+  <div class="course-container">
+    <table id="courseTable">
+
+        <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+        </colgroup>
+
+        <tr style="--bg-color: rgb(128, 0, 175);">
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th>Completed?</th>
+        <th>Description (Click Arrow to Toggle)</th>
+        </tr>
+
+        <tr>   
+        <td>APSC160</td>
+        <td>Computation in Engineering Design</td>
+        <td>Yes</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Introduction to computer systems, compilers, and programming fundamentals. Variables, data types, expressions, I/O, libraries, function calls, flow control, looping, debugging, and modular programming. Programming with multi-dimensional arrays. Simple I/O operations and analog data acquisition.</p>
+            </div>
+        </td> 
+        </tr>
+
+        <tr>
+        <td>CPEN212</td>
+        <td>Computing Systems II</td>
+        <td>Yes</td>
+                <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Abstractions at the hardware-software interface and their low-level implementation. Procedure invocation, dynamic dispatch, and related exploits; library linkage, virtual memory, heap management, garbage collection, and caches; interrupts, signals, and processes; threads, locks, and cache coherence; files, devices, and network topology.</p>
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+        <td>CPEN221</td>
+        <td>Software Construction I</td>
+        <td>Yes</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Design and implementation of software systems. Object-oriented design with classes, interfaces, inheritance, and abstract data types. Mutability, recursion, equality, lambdas, streams, exceptions, and error handling. Parallelism with threads and mutexes, data structures such as sets, arrays, trees, and maps.</p>
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+        <td>CPEN311</td>
+        <td>Digital Systems Design</td>
+        <td>Yes</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Advanced combinational and sequential electronic system design. Hardware specification, modelling, and simulation using hardware description languages (HDLs) and CAD tools. Design with programmable logic including FPGA's. Applications include complex state machines, microcontrollers, arithmetic circuits, and interface units.</p>
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+        <td>CPEN312</td>
+        <td>Digital Systems and Microcomputers</td>
+        <td>Yes</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Data representation in digital computers; boolean algebra; the design and optimization and implementation of combinatorial and sequential circuits; modern digital circuit technologies; memory and programmable logic devices; organization and operation of microcomputers; data/address bus organization; input-output interfacing.</p>
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+        <td>CPEN331</td>
+        <td>Operating Systems</td>
+        <td>No</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Operating systems, their design and their implementation. Process concurrency, synchronization, communication and scheduling. Device drivers, memory management, virtual memory, file systems, networking and security.</p>
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+        <td>CPEN412</td>
+        <td>Microcomputer Systems Design</td>
+        <td>No</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p>Microprocessor and system buses; advanced I/O methods; priority interrupts; event/exception handling; serial I/O; computer networking; memory system design; interaction of hardware and software, microprocessor comparison, testability issues, safety critical systems.</p>
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+        <td>CPSC538</td>
+        <td>Real Time System Design</td>
+        <td>Yes</td>
+        <td>      
+            <div class="collapsible">
+                <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                    <span class="arrow">▶</span>
+                </button>
+            <div class="collapsible-content">
+                <p> Theoretical and practical aspects of real-time and embedded systems, including task scheduling, schedulability analysis, resource sharing protocols, real-time operating system principles, fault tolerance, and software-intensive safety-critical systems.</p>
+            </div>
+        </td>
+        </tr>
+
+      </table>
+    </div>
+
+       <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:#ffb007;">Electrical Engineering</h2>
+    <div class="course-container">
+    <table id="courseTable">
+
+    <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+    </colgroup>
+
+    <tr style="--bg-color: #ffb007;">
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Completed?</th>
+      <th>Description (Click Arrow to Toggle)</th>
+    </tr>
+    <tr>
+      <td>ELEC204</td>
+      <td>Linear Circuits</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Nodal and mesh analysis; Thevenin, Norton, superposition, and maximum power transfer theorems. First- and second-order circuits (RL, RC, RLC), operational amplifiers, sinusoidal steady-state analysis, phasors, and power calculations. Introduction to diodes and transistors.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ELEC221</td>
+      <td>Signals and Systems</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Complex numbers, LTI systems, convolution sum, discrete-time Fourier series and transforms, z-transform, sampling, introduction to filtering and modulation, feedback systems, stability..</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ELEC302</td>
+      <td>Electronic Circuits</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Semiconductor fundamentals; modelling of electronic devices including diodes and transistors; design of power supplies, waveform generators and logic circuits; signals in time and frequency domains; operational amplifiers; active filters; oscillators; device specification and selection.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ELEC341</td>
+      <td>Systems and Control</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Continuous time system analysis by Laplace transforms; system modelling by transfer function and state space methods; feedback, stability and sensitivity; control design; frequency domain analysis.</p>
+        </div>
+      </td>
+      </tr>
+
+      </table>
+    </div>
+
+    <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:blue;">Mechanical Engineering</h2>
+    <div class="course-container">
+    <table id="courseTable">
+
+    <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+    </colgroup>
+
+    <tr style="--bg-color: blue;">
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Completed?</th>
+      <th>Description (Click Arrow to Toggle)</th>
+    </tr>
+
+    <tr>
+      <td>ENPH257</td>
+      <td>Heat and Thermodynamics</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Thermometry, thermal properties of matter; heat transfer by conduction; convection and radiation; kinetic theory of gases and gas laws; heat engines; refrigeration; change of state; first and second laws of thermodynamics.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MECH260</td>
+      <td>Mechanics of Materials</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Statically determinate frames and trusses; normal and shear stresses and strains; shear force and bending moment diagrams; theory of beam bending, torsion of circular rods; transformation of stress and strain in two and three dimensions, Mohr's circle; yield and ultimate failure criteria.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ENPH270</td>
+      <td>Mechanics II</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Dynamics: systems of particles, kinematics and kinetics of rigid bodies (plane motion), energy and momentum, rotating coordinates.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>APSC278</td>
+      <td>Engineering Materials</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Atomic bonding; crystal structures and imperfections; properties of metals, ceramics, polymers, wood, concrete and fibre composite materials; selection of materials; corrosion; mechanical testing and heat treatment.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>APSC279</td>
+      <td>Engineering Materials Laboratory</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Atomic bonding; crystal structures and imperfections; properties of metals, ceramics, polymers, wood, concrete and fibre composite materials; selection of materials; corrosion; mechanical testing and heat treatment.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MECH280</td>
+      <td>Fluid Mechanics</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Fluid properties; statics; kinematics, dynamics, energy, and momentum principles for control volumes; dimensional analysis and similarity; laminar and turbulent flow; pipe flow; principles of centrifugal pumps.</p>
+        </div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>MECH325</td>
+      <td>Machine Design</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Selection of flexible drives, bearings, fluid power system components, and couplings. Design of shafts, bolted joints and power screws. Design and selection of gears, gear trains, and mechanisms.</p>
+        </div>
+      </td>
+    </tr>
+
+    </table>
+    </div>
+
+    <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:rgb(255, 106, 0);">Project</h2>
+    <div class="course-container">
+    <table id="courseTable">
+
+    <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+    </colgroup>
+
+    <tr style="--bg-color: rgb(255, 106, 0);">
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Completed?</th>
+      <th>Description (Click Arrow to Toggle)</th>
+    </tr>
+
+    <tr>
+      <td>ENPH253</td>
+      <td>Instrument Design (Cooking Robots)</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>See Projects.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ENPH259</td>
+      <td>Experimental Techniques (Servo Controller)</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>See Projects.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ENPH353</td>
+      <td>Engineering Physics Project I</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>See Projects.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ENPH459</td>
+      <td>Engineering Physics Project II</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Capstone year 1.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ENPH479</td>
+      <td>Engineering Physics Project III</td>
+      <td>No</td>
+        <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Capstone year 2.</p>
+        </div>
+      </td>
+
+    </tr>
+      </table>
+    </div>
+
+
+    <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:rgb(202, 2, 2);">Math</h2>
+    <div class="course-container">
+    <table id="courseTable">
+
+    <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+    </colgroup>
+
+    <tr style="--bg-color: rgb(202, 2, 2);">
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Completed?</th>
+      <th>Description (Click Arrow to Toggle)</th>
+    </tr>
+
+    <tr>
+      <td>MATH100</td>
+      <td>Differential Calculus with Applications</td>
+      <td>Yes</td>
+        <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Calculus I.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH101</td>
+      <td>Integral Calculus with Applications</td>
+      <td>Yes</td>
+        <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Calculus II.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH152</td>
+      <td>Linear Algebra</td>
+      <td>Yes</td>
+        <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>2D and 3D geometry, vectors and matrices, eigenvalues and vibration, physical applications. Laboratories demonstrate computer solutions of large systems.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH217</td>
+      <td>Multivariable and Vector Calculus</td>
+      <td>Yes</td>
+        <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Vectors, dot and cross products, lines, planes, curves, and surfaces. Multivariable functions, derivatives, gradients, extrema, and Lagrange multipliers. Double and triple integrals in various coordinates, vector fields, line and surface integrals. Gradient, divergence, curl, classical theorems, and differential forms with the generalized Stokes’ theorem.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH255</td>
+      <td>Ordinary Differential Equations</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>First- and second-order differential equations. Numerical methods, Laplace transforms, systems of ODEs with eigenvalue techniques, and nonlinear planar systems.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH257</td>
+      <td>Partial Differential Equations</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Introduction to partial differential equations; Fourier series; the heat, wave and potential equations; boundary-value problems. Numerical methods for PDEs using finite differences and stability analysis.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH305</td>
+      <td>Complex Analysis</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Functions of a complex variable, Cauchy-Riemann equations, contour integration, Laurent series, residues, integrals of multi-valued functions, Fourier transforms.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH307</td>
+      <td>Applied Linear Algebra</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Applications of linear algebra to problems in science and engineering; use of computer algebra systems for solving problems in linear algebra.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH318</td>
+      <td>Probability with Physical Applications</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Random variables, discrete and continuous distributions. Random walk, Markov chains, Monte Carlo methods. Characteristic functions, limit laws. Applications in stochastic modeling, statistical inference, and data analysis.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>MATH400</td>
+      <td>Applied Partial Differential Equations</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Sturm-Liouville theory, eigenfunction expansions, integral transform methods. Introduction to advanced topics such as dispersion relations, edge singularities, and nonlinear PDEs.</p>
+        </div>
+      </td>
+    </tr>
+
+      </table>
+    </div>
+
+    <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:green;">Physics</h2>
+    <div class="course-container">
+    <table id="courseTable">
+
+    <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+    </colgroup>
+
+    <tr style="--bg-color: green;">
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Completed?</th>
+      <th>Description (Click Arrow to Toggle)</th>
+    </tr>
+
+    <tr>
+      <td>PHYS117</td>
+      <td>Dynamics and Waves</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Kinematics including curvilinear motion. Forces and Newton's laws of motion. Work-energy theorem, conservation of energy. Conservation of momentum, collisions. Torque, rotational dynamics, angular momentum. Oscillations and waves.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS118</td>
+      <td>Electricity, Light and Radiation</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Optics, electricity and magnetism, electric circuits, electromagnetic waves.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS119</td>
+      <td>Experimental Physics Lab I</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Introductory laboratory course, with emphasis on data collection, data analysis techniques, and scientific reasoning. </p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS250</td>
+      <td>Modern Physics</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Wave-particle duality of matter, special relativity, processes in atomic, nuclear and solid state, and introduction to quantum mechanical devices and techniques.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS301</td>
+      <td>Electricity and Magnetism</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Electrostatics, electric fields and potentials, Poisson and Laplace equations, multipole moments, energy, capacitance, and dielectrics. Boundary value problems, magnetostatics, magnetic fields and vector potentials, magnetic materials, forces, energy, and inductance. Faraday induction, Maxwell’s equations, and electromagnetic waves.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS304</td>
+      <td>Quantum Mechanics</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Principles and applications of quantum mechanics, wave mechanics, the Schroedinger equation, expectation values, Hermitian operators, commuting observables, one-dimensional systems, harmonic oscillators, angular momentum, three-dimensional systems. </p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS350</td>
+      <td>Applications of Classical Mechanics</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Particle mechanics: Euler's equations, tops and gyroscopes, motion of the Earth, Lagrangian and Hamiltonian methods. Variational principles in optics and mechanics, Liouville's theorem and statistical mechanics. The relationship between classical and quantum mechanics.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ENPH352</td>
+      <td>Laboratory Techniques in Physics</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Experiments based on the lecture material from PHYS 301, PHYS 304, PHYS 401, and PHYS 408.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS401</td>
+      <td>Electromagnetic Theory</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Electromagnetic induction, Maxwell’s equations, and electromagnetic waves. Absorption, dispersion, and wave propagation in waveguides. Radiation of electromagnetic waves, potentials, fields, gauge transformations, and the connection between electrodynamics and relativity.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS403</td>
+      <td>Statistical Mechanics</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Principles and applications of statistical mechanics. Ideal gases, degenerate Fermi gases, Bose-Einstein condensation, black body radiation, fluctuations and phase transitions.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS408</td>
+      <td>Optics</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Principles and applications of optical physics. Interference, diffraction, coherence, polarization, Fresnel relations, optical coatings, waves in dielectric media, Gaussian beams, waveguides, optical cavities, lasers, fibre optics, and Fourier optics.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>PHYS410</td>
+      <td>Computational Physics</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Polynomial interpolation, nonlinear equation solving, finite difference approximations, ordinary and partial differential equations, Monte Carlo methods, and fast Fourier transforms. Applications to classical dynamics, quantum mechanics, and statistical mechanics.</p>
+        </div>
+      </td>
+    </tr>
+
+      </table>
+    </div>
+
+    <h2 style="padding-top: 75px; margin: auto 20px; text-align: left; --line-color:gray;">Other</h2>
+    <div class="course-container">
+    <table id="courseTable">
+
+    <colgroup>
+        <col style="width: 10%">
+        <col style="width: 25%;">
+        <col style="width: 5%;">
+        <col style="width: 60%;">
+    </colgroup>
+
+    <tr style="--bg-color: gray;">
+      <th>Course Code</th>
+      <th>Course Name</th>
+      <th>Completed?</th>
+      <th>Description (Click Arrow to Toggle)</th>
+    </tr>
+    <tr>
+      <td>APSC100</td>
+      <td>Introduction to Engineering I</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>An introduction to the engineering profession including: roles and responsibilities of the engineer, the engineering disciplines, sustainability, the engineering design process, foundational scientific principles, prototyping, engineering graphics, technical communication, and engineering ethics.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>APSC101</td>
+      <td>Introduction to Engineering II</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>An introduction to the engineering profession including: the engineering design process, sustainability, prototype testing, foundational scientific principles, team functioning, engineering graphics, and technical communication.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>CHEM121</td>
+      <td>Structure and Bonding in Chemistry</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Fundamentals of bonding theories and structural chemistry, with applications relevant to modern society.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>CHEM123</td>
+      <td>Thermodynamics, Kinetics and Organic Chemistry</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Fundamentals of chemical reactivity: thermodynamics; kinetics; organic chemistry, including stereochemistry; applications relevant to modern society.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>IGEN201</td>
+      <td>Technical Communication</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Written and oral communication in business correspondence, engineering design methods, report preparation, and oral presentations of technical material.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>CIVL250</td>
+      <td>Engineering and Sustainable Development</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Implications of a finite biosphere and the complexities inherent in environmental decision-making.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>APSC450</td>
+      <td>Engineering Ethics</td>
+      <td>Yes</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Legislation affecting the practice of engineering; ethical principles and responsibilities. Management of engineering enterprises; labour relations, safety and environmental legislation.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ELEC481</td>
+      <td>Economic Analysis of Engineering Projects</td>
+      <td>No</td>
+      <td>      
+        <div class="collapsible">
+            <button class="collapsible-btn" onclick="toggleCollapsible(this)">
+                <span class="arrow">▶</span>
+            </button>
+        <div class="collapsible-content">
+            <p>Time-money relationships; economic analysis of alternatives including the effects of interest rates, inflation, depreciation, taxation and uncertainty; cost estimation and budgeting; financial analysis of engineering operations.</p>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
+</body>
+</html>

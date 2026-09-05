@@ -85,10 +85,10 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     text-align: left;
 
-    position: fixed;   /* makes it stay in place */
-    top: 50%;          /* vertical center */
-    left: 50%;         /* horizontal center */
-    transform: translate(-50%, -50%); /* perfect centering */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .image-wrapper {

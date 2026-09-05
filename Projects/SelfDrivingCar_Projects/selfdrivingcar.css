@@ -1,8 +1,8 @@
 /* formatting */
 html, body {
   height: 100%;
-  margin: 0;        /* remove default margin */
-  padding: 0;       /* remove default padding */
+  margin: 0;
+  padding: 0;
 }
 body {
     text-align: center;
@@ -97,8 +97,8 @@ section {
   color: white;
   padding: 40px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  min-height: 100vh;  /* full viewport height */
-  box-sizing: border-box; /* include padding in height calculation */
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 .image-wrapper {
   display: block;
@@ -116,21 +116,21 @@ section {
   display: flex;
   border: 5px solid white;
   border-radius: 4px;
-  overflow: hidden;           /* ensures borders don’t overlap */
+  overflow: hidden;
   width: fit-content;
   margin: 0 auto 50px auto;
 }
 
 .image-wrapper2 img {
   display: block;
-  max-width: 400px;           /* keeps them reasonable */
+  max-width: 400px;
   height: auto;
-  flex: 1;                    /* make them share available width */
-  border-right: 5px solid white; /* divider between */
+  flex: 1;
+  border-right: 5px solid white;
 }
 
 .image-wrapper2 img:last-child {
-  border-right: none;         /* remove divider on the last image */
+  border-right: none;
 }
 .collapsible-content.show {
   max-height: 6000px;
