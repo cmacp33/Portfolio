@@ -53,7 +53,6 @@
           </button>
           <div class="collapsible-content">
             <p>The driving controller used a camera for sensing, computer vision for image processing, and a PD controller for movement control. All computer vision techniques were first tested in Google Colab to quickly test and troubleshoot early issues.</p>
-            <div class="image-wrapper"><video width="640" height="360" controls><source src="selfdrivingcar_images/nav_vid.mp4" type="video/mp4"></video></div>
             <h4>Contour Detection</h4>
             <p>Contour detection was frequently used to trigger specific actions. A function was implemented to detect contours within a BGR range and return True if the largest contour exceeded a provided target area.  Additionally, the current largest contour area was printed to the terminal for determining the appropriate target area and debugging. </p>
             <div class="image-wrapper2">
